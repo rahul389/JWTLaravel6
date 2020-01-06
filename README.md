@@ -24,22 +24,39 @@ You will have something like the below response in the console.
 λ php artisan vendor:publish
 
  Which provider or tag's files would you like to publish?:
+ 
   [0 ] Publish files from all providers and tags listed below
+  
   [1 ] Provider: Facade\Ignition\IgnitionServiceProvider
+  
   [2 ] Provider: Fideloper\Proxy\TrustedProxyServiceProvider
+  
   [3 ] Provider: Illuminate\Foundation\Providers\FoundationServiceProvider
+  
   [4 ] Provider: Illuminate\Mail\MailServiceProvider
+  
   [5 ] Provider: Illuminate\Notifications\NotificationServiceProvider
+  
   [6 ] Provider: Illuminate\Pagination\PaginationServiceProvider
+  
   [7 ] Provider: Laravel\Tinker\TinkerServiceProvider
+  
   [8 ] Provider: Tymon\JWTAuth\Providers\LaravelServiceProvider
+  
   [9 ] Tag: config
+  
   [10] Tag: flare-config
+  
   [11] Tag: ignition-config
+  
   [12] Tag: laravel-errors
+  
   [13] Tag: laravel-mail
+  
   [14] Tag: laravel-notifications
+  
   [15] Tag: laravel-pagination
+  
  > 8
 8
 
