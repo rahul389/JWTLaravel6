@@ -11,10 +11,12 @@ Once you have the Laravel application created, we will install the tymondesigns/
  
 Run the below command in the terminal to install this package.
 
-composer require tymon/jwt-auth:dev-develop --prefer-source
+<b>composer require tymon/jwt-auth:dev-develop --prefer-source</b>
+
 When package installation finishes run the below command to publish the package configurations.
 
-php artisan vendor:publish
+<b>php artisan vendor:publish</b>
+
 The above command will provide you a list of all discoverable packages, choose the Provider: Tymon\JWTAuth\Providers\LaravelServiceProvider from the list and hit enter.
 
 You will have something like the below response in the console.
@@ -44,16 +46,18 @@ You will have something like the below response in the console.
 Copied File [\vendor\tymon\jwt-auth\config\config.php] To [\config\jwt.php]
 Publishing complete.
 Publishing complete.
+
 Above command has generated a jwt.php configuration file in the config folder. Feel free to open this file and check which settings are available through this package.
 
 Generating JWT Authentication Keys
 JWT authentication token will be signed with an encryption key, run the following command to generate the secret key used to sign the tokens.
 
-php artisan jwt:secret
+<b>php artisan jwt:secret</b>
 You will have something like the below output.
 
 λ php artisan jwt:secret
 jwt-auth secret [pUSAT5tCxJLHT28RNGMLpbgis3J6MD2NUEDJQtgeGYJgwBVLk9kTwEA4WSNmn3og] set successfully.
+
 Registering JWT Middleware
 JWT package comes with a pre built middleware which we can use for our API routes. Open the app/Http/Kernel.php file and register this middleware with the name auth.jwt.
 
@@ -86,10 +90,12 @@ In this section, we will setup our routes required for our this application. Ope
 
 Route::post('login', 'ApiController@login');
 Route::post('register', 'ApiController@register');
+Route::post('forgot-password', 'APIController@sendResetLinkEmailApi');
 
 Route::group(['middleware' => 'auth.jwt'], function () {
     Route::get('logout', 'ApiController@logout');
 });
+
 Updating User Model
 JWT package we are using requires implementing the Tymon\JWTAuth\Contracts\JWTSubject interface on our User model. This interface requirews to implement two methods getJWTIdentifier and getJWTCustomClaims in our User model.
 
