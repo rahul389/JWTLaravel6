@@ -106,14 +106,19 @@ Setting Up API Routes
 In this section, we will setup our routes required for our this application. Open the routes/api.php file and copy the below routes to this file.
 
 Route::post('login', 'ApiController@login');
+
 Route::post('register', 'ApiController@register');
+
 Route::post('forgot-password', 'APIController@sendResetLinkEmailApi');
+
 
 Route::group(['middleware' => 'auth.jwt'], function () {
     Route::get('logout', 'ApiController@logout');
 });
 
+
 Updating User Model
+
 JWT package we are using requires implementing the Tymon\JWTAuth\Contracts\JWTSubject interface on our User model. This interface requirews to implement two methods getJWTIdentifier and getJWTCustomClaims in our User model.
 
 Open the app/User.php file and update with the below one.
